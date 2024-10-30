@@ -12,15 +12,20 @@ const links = {
 }
 
 export const siteConfig = {
-  name: "SaaSy Land",
-  description:
-    "An open-source starter for Next.js 14 full-stack projects with advanced authentication and several database configurations. The aim of this project is to provide a solid foundation for faster building and launching SaaS products, marketing sites, blogs, and more.",
-  links,
-  url: "https://saasyland.com",
-  ogImage: links.openGraphImage,
-  author: "pjborowiecki",
-  hostingRegion: "fra1",
-  keywords: ["SaaS", "Next.js", "Template"],
+  name: "Your Site Name",
+  description: "Your site description goes here",
+  url: "https://your-site.com",
+  author: "Your Name",
+  links: {
+    authorsWebsite: "https://your-personal-site.com",
+    openGraphImage: "https://your-site.com/og-image.jpg",
+  },
+  keywords: [
+    "Next.js",
+    "React",
+    "TypeScript",
+    // Add more keywords
+  ],
   navItems: [
     {
       title: "About",

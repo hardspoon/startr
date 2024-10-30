@@ -17,7 +17,7 @@
   },
   "type": "module",
   "scripts": {
-    "dev": "contentlayer build && next dev --experimental-https",
+    "dev": "next dev --experimental-https",
     "build": "contentlayer build && next build",
     "start": "next start",
     "postinstall": "pnpm prisma generate",
@@ -27,13 +27,15 @@
     "db:pull": "npx prisma db pull",
     "db:reset": "npx prisma migrate reset",
     "db:studio": "npx prisma studio",
+    "db:test": "tsx scripts/test-db.mjs",
     "shadcn:add": "pnpm dlx shadcn-ui@latest add",
     "packages:update-all": "pnpm update --latest",
     "prettier:format": "prettier --write \"**/*.{ts,tsx,mdx}\" --cache",
     "prettier:check": "prettier --check \"**/*.{ts,tsx,mdx}\" --cache",
     "typecheck": "tsc --noEmit",
     "lint": "contentlayer build && next lint",
-    "lint:fix": "contentlayer build && next lint --fix"
+    "lint:fix": "contentlayer build && next lint --fix",
+    "test:app": "tsx scripts/test-app.mjs"
   },
   "dependencies": {
     "@auth/core": "^0.30.0",
@@ -83,6 +85,7 @@
     "dotenv": "^16.4.5",
     "framer-motion": "^11.1.9",
     "jsonwebtoken": "^9.0.2",
+    "lucide-react": "^0.454.0",
     "next": "14.2.3",
     "next-auth": "5.0.0-beta.11",
     "next-contentlayer": "^0.3.4",
@@ -129,6 +132,7 @@
     "remark": "^15.0.1",
     "remark-gfm": "^4.0.0",
     "tailwindcss": "^3.4.3",
+    "tsx": "^4.19.2",
     "typescript": "^5.4.5"
   },
   "engine": {

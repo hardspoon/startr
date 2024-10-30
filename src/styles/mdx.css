@@ -19,13 +19,13 @@
 }
 
 [data-rehype-pretty-code-fragment] code {
-  @apply grid min-w-full break-words rounded-none border-0 bg-transparent p-0 text-sm;
+  @apply grid min-w-full break-words rounded-none border-0 bg-transparent p-0;
   counter-reset: line;
   box-decoration-break: clone;
 }
 
 [data-rehype-pretty-code-fragment] .line {
-  @apply inline-block min-h-[1rem] w-full px-4 py-0.5;
+  @apply px-4 py-1;
 }
 
 [data-rehype-pretty-code-fragment] [data-line-numbers] .line {
@@ -33,7 +33,7 @@
 }
 
 [data-rehype-pretty-code-fragment] [data-line-numbers] > .line::before {
-  @apply text-xs text-zinc-50/40;
+  @apply text-zinc-50/40 text-xs;
   counter-increment: line;
   content: counter(line);
   display: inline-block;
@@ -51,7 +51,7 @@
 }
 
 [data-rehype-pretty-code-fragment] .word--highlighted {
-  @apply rounded-md border-zinc-700/70 bg-zinc-700/50 p-1;
+  @apply rounded-md bg-zinc-700/50 border-zinc-700/70 p-1;
 }
 
 .dark [data-rehype-pretty-code-fragment] .word--highlighted {

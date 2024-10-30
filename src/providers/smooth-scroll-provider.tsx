@@ -1,16 +1,17 @@
 "use client"
 
 import * as React from "react"
-import { ReactLenis } from "@studio-freight/react-lenis"
 
-interface SmoothScrollProviderProps {
-  children: React.ReactNode
+interface SmoothScrollContextType {
+  // Add any smooth scroll context properties here
 }
 
-export function SmoothScrollProvider({ children }: SmoothScrollProviderProps) {
+const SmoothScrollContext = React.createContext<SmoothScrollContextType | undefined>(undefined)
+
+export function SmoothScrollProvider({ children }: { children: React.ReactNode }) {
   return (
-    <ReactLenis root options={{ lerp: 0.1, duration: 1.5, syncTouch: true }}>
+    <SmoothScrollContext.Provider value={{}}>
       {children}
-    </ReactLenis>
+    </SmoothScrollContext.Provider>
   )
 }

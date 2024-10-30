@@ -16,6 +16,16 @@ import { cn } from "@/lib/utils"
 import { Toaster } from "@/components/ui/toaster"
 import { TailwindIndicator } from "@/components/tailwind-indicator"
 
+// Create a client-side wrapper component
+import dynamic from 'next/dynamic'
+
+const Providers = dynamic(
+  () => import('../providers/providers').then((mod) => mod.Providers),
+  {
+    ssr: false,
+  }
+)
+
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
@@ -83,19 +93,12 @@ export default function RootLayout({ children }: RootLayoutProps): JSX.Element {
           fontHeading.variable
         )}
       >
-        <SmoothScrollProvider>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="dark"
-            enableSystem
-            disableTransitionOnChange
-          >
-            {children}
-            <Toaster />
-            <Analytics />
-            <TailwindIndicator />
-          </ThemeProvider>
-        </SmoothScrollProvider>
+        <Providers>
+          {children}
+          <Toaster />
+          <Analytics />
+          <TailwindIndicator />
+        </Providers>
       </body>
     </html>
   )
